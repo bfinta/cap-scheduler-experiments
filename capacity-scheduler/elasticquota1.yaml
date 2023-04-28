@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eqns1
+  labels:
+    name: eqns1
+---
+apiVersion: scheduling.sigs.k8s.io/v1alpha1
+kind: ElasticQuota
+metadata:
+  name: equota1
+  namespace: eqns1
+spec:
+  min:
+    nvidia.com/gpu: 1
+  max:
+    nvidia.com/gpu: 3
